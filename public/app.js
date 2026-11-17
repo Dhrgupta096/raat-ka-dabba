@@ -98,6 +98,16 @@
   }
 
   async function api(path, options = {}) {
+    const isStaticHost =
+      window.location.hostname.endsWith("github.io") ||
+      window.location.protocol === "file:";
+    if (isStaticHost && typeof window.__RKD_STATIC_API === "function") {
+      return window.__RKD_STATIC_API(
+        path,
+        options,
+        state.currentUser ? state.currentUser.id : ""
+      );
+    }
     const headers = Object.assign(
       { "Content-Type": "application/json" },
       options.headers || {}
@@ -152,7 +162,13 @@
   }
 
   function connectRealtimeSSE() {
-    if (typeof EventSource === "undefined") return;
+    if (
+      typeof EventSource === "undefined" ||
+      window.location.hostname.endsWith("github.io") ||
+      window.location.protocol === "file:"
+    ) {
+      return;
+    }
     const es = new EventSource("/api/stream");
     es.onopen = () => {
       state.sseConnected = true;
