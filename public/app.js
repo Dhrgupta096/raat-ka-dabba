@@ -308,7 +308,7 @@
       <section class="bt-landing-hero">
         <div class="bt-landing-grid">
           <div>
-            <div class="bt-hero-kicker">TOWER 3 BOYS HOSTEL · AFTER 9 PM MESS SHUTDOWN</div>
+            <div class="bt-hero-kicker">TOWER 3 BOYS HOSTEL · AFTER 10 PM MESS SHUTDOWN</div>
             <h1 class="bt-hero-h1">Mess closed.<br/>Don't pay <em>₹350</em> alone.</h1>
             <p class="bt-hero-copy">
               Pool your ₹79 fries or ₹119 burger with Tower 3 wingmates in one shared Grains &amp; Gossip cart. Hit ₹350 together, pay only for your own dabba.
@@ -363,7 +363,7 @@
       <div class="bt-fact-bar">
         <div class="bt-fact-bar-inner">
           <span>Cafe: <strong>Grains &amp; Gossip</strong></span>
-          <span>Timings: <strong>9:30 PM – 3:00 AM</strong></span>
+          <span>Timings: <strong>10:00 PM – 3:00 AM</strong></span>
           <span>Min Shared Cart: <strong>₹350</strong></span>
           <span>Packing: <strong>₹10 / food item</strong> (Drinks free)</span>
           <span>Delivery: <strong>Free · Hostel Reception (~30 min)</strong></span>

@@ -1,6 +1,6 @@
 # Raat Ka Dabba
 
-Late-night shared food ordering web app for **Tower 3 Boys Hostel** (`t3.raatkadabba.in`), built for **Grains and Gossip** (9:30 PM – 3:00 AM).
+Late-night shared food ordering web app for **Tower 3 Boys Hostel** (`t3.raatkadabba.in`), built for **Grains and Gossip** (10:00 PM – 3:00 AM).
 
 ## Key Rules & Features
 - **Tower 3 Boys Hostel Only**: Registration and login enforce `@college.edu` student email and `T3-XXX` room numbers.

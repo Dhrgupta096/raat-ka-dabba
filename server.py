@@ -29,7 +29,7 @@ MINIMUM_CART_INR = 350  # cafe's printed minimum order value (food only)
 PACKING_FEE_PER_ITEM_INR = 10  # Rs 10 per container; drinks are free
 CAFE_INFO = {
     "phone": "+91 99809 25507",
-    "timings": "9:30 PM – 3:00 AM",
+    "timings": "10:00 PM – 3:00 AM",
     "pickup": "Hostel Reception",
     "delivery_fee": "Free",
     "eta": "30 min or more",
