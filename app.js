@@ -305,33 +305,73 @@
     }
 
     return `
-      <div class="bt-cafe-strip">
-        <div class="bt-cafe-strip-inner">
+      <section class="bt-landing-hero">
+        <div class="bt-landing-grid">
           <div>
-            <div style="font-size:1.05rem;font-weight:800;color:var(--bt-ink);">
-              Grains &amp; Gossip — Tower 3 Boys Hostel Group Order
-            </div>
-            <div class="bt-cafe-facts">
-              <span>Timings: <strong>9:30 PM – 3:00 AM</strong></span>
-              <span>Min Shared Cart: <strong>₹350</strong></span>
-              <span>Packing: <strong>₹10 / food item</strong> (Drinks free)</span>
-              <span>Delivery: <strong>Free · Hostel Reception (~30 min)</strong></span>
-              <span>Contact: <strong>+91 99809 25507</strong></span>
+            <div class="bt-hero-kicker">TOWER 3 BOYS HOSTEL · AFTER 9 PM MESS SHUTDOWN</div>
+            <h1 class="bt-hero-h1">Mess closed.<br/>Don't pay <em>₹350</em> alone.</h1>
+            <p class="bt-hero-copy">
+              Pool your ₹79 fries or ₹119 burger with Tower 3 wingmates in one shared Grains &amp; Gossip cart. Hit ₹350 together, pay only for your own dabba.
+            </p>
+            <div style="display:flex;gap:0.55rem;flex-wrap:wrap;">
+              <button type="button" class="bt-btn bt-btn-primary" data-action="open-create-group">
+                + Start a Group Order
+              </button>
+              <button type="button" class="bt-btn bt-btn-outline" data-action="open-modal" data-modal="joinByCode">
+                Join by Group ID
+              </button>
+              <button type="button" class="bt-btn bt-btn-outline" data-action="scroll-menu">
+                Browse 58-Item Menu ↓
+              </button>
             </div>
           </div>
 
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-            <button type="button" class="bt-btn bt-btn-primary" data-action="open-create-group">
-              + Start Group Order
-            </button>
-            <button type="button" class="bt-btn bt-btn-outline" data-action="open-modal" data-modal="joinByCode">
-              Join by Group ID
-            </button>
+          <!-- Clean Typographic Dabba Pool Breakdown -->
+          <div class="bt-math-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem;">
+              <strong style="font-size:0.86rem;">How Tower 3 Beats the ₹350 Minimum</strong>
+              <span class="bt-badge bt-badge-green">NO EQUAL SPLIT</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:0.45rem;">
+              <div class="bt-math-row" style="opacity:0.75;">
+                <span><strong>Ordering Solo:</strong> Classic Veg Burger</span>
+                <span style="color:var(--bt-danger);font-weight:800;">₹119 · Blocked (Need ₹231 more)</span>
+              </div>
+              <div class="bt-math-row" style="border-color:var(--bt-primary);">
+                <span><strong>Room A:</strong> Classic Veg Burger</span>
+                <strong>Pays ₹119 + ₹10 pack</strong>
+              </div>
+              <div class="bt-math-row" style="border-color:var(--bt-primary);">
+                <span><strong>Room B:</strong> Schezwan Fried Rice</span>
+                <strong>Pays ₹159 + ₹10 pack</strong>
+              </div>
+              <div class="bt-math-row" style="border-color:var(--bt-primary);">
+                <span><strong>Room C:</strong> Peri Peri Fries + Masala Tea</span>
+                <strong>Pays ₹108 + ₹10 pack</strong>
+              </div>
+            </div>
+
+            <div style="margin-top:0.7rem;padding-top:0.65rem;border-top:1px solid var(--bt-border);display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;">
+              <span style="color:var(--bt-muted);">Combined Food Total: <strong style="color:var(--bt-ink);">₹386 / ₹350</strong></span>
+              <span style="color:var(--bt-primary);font-weight:800;">Checkout Unlocked · Free Reception Drop</span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <div class="bt-fact-bar">
+        <div class="bt-fact-bar-inner">
+          <span>Cafe: <strong>Grains &amp; Gossip</strong></span>
+          <span>Timings: <strong>9:30 PM – 3:00 AM</strong></span>
+          <span>Min Shared Cart: <strong>₹350</strong></span>
+          <span>Packing: <strong>₹10 / food item</strong> (Drinks free)</span>
+          <span>Delivery: <strong>Free · Hostel Reception (~30 min)</strong></span>
+          <span>Contact: <strong>+91 99809 25507</strong></span>
         </div>
       </div>
 
-      <div class="bt-container" style="padding-bottom:3rem;">
+      <div id="menu-anchor" class="bt-container" style="padding-bottom:4rem;">
         <!-- Active Tower 3 Boys Hostel Groups -->
         <section style="margin-top:1.25rem;margin-bottom:1.5rem;">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
@@ -1163,6 +1203,12 @@
         state.activeView = btn.getAttribute("data-view");
         state.cartDrawerOpen = false;
         render();
+        return;
+      }
+
+      if (action === "scroll-menu") {
+        const el = document.getElementById("menu-anchor");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
