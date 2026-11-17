@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: raat-ka-dabba
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python3 server.py
+    healthCheckPath: /health
+    envVars:
+      - key: BITETOGETHER_DOMAIN
+        value: https://t3.raatkadabba.in
+      - key: ALLOWED_EMAIL_DOMAIN
+        value: college.edu

@@ -1680,6 +1680,10 @@ def make_handler(engine: RaatKaDabbaEngine):
                     )
                     return
 
+                if path == "/health":
+                    self._send_json({"ok": True, "service": "Raat Ka Dabba"})
+                    return
+
                 if path == "/api/menu":
                     self._send_json(engine.get_menu())
                     return
@@ -1875,4 +1879,6 @@ def run_server(host: str = "127.0.0.1", port: int = 8765) -> None:
 
 if __name__ == "__main__":
     port_num = int(os.environ.get("PORT", "8765"))
-    run_server(port=port_num)
+    default_host = "0.0.0.0" if os.environ.get("PORT") else "127.0.0.1"
+    host_addr = os.environ.get("HOST", default_host)
+    run_server(host=host_addr, port=port_num)
